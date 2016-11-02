@@ -1,0 +1,143 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.7em;
+    font-family: Helvetica,Arial,Sans-Serif;
+    color: #D5D5D5;
+    background: url(../img/background-tpl.png) 50% 0 repeat;
+}
+header {
+    width: 960px;
+    margin: 0 auto;
+    color: #FFF;
+    height: 46px;
+    padding: 5px 10px;
+}
+footer {
+    width: 960px;
+    margin: 0 auto;
+    color: #A1A1A1;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a {
+    color: #BFBFBF;
+}
+header h1 {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000;
+}
+header h5 {
+    text-transform: lowercase;
+    font-weight: 100;
+    font-size: 11px;
+    line-height: 11px;
+}
+.background {
+    background: url(../img/background-img.jpg) 50% 0 no-repeat;
+    min-height: 100%;
+    padding-top: 100px;
+}
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    background: #212121 url(../img/background-side.png) 50% 0 repeat-x;
+    border-left: 1px solid #333;
+    border-right: 1px solid #000;
+    border-top: 1px solid #5e5e5e;
+    min-height: 300px;
+    padding: 10px;
+}
+.serverinfo {
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.tabs {
+    display: block;
+    width: 100%;
+}
+.tabs > div {
+    padding-top:10px;
+}
+.tabs ul {
+    margin:0px;
+    padding:0px;
+}
+.tabs ul:after {
+    content:"";
+    display:block;
+    clear:both;
+    height:5px;
+    background:#454444;
+}
+.tabs ul li {
+    margin:0px;
+    padding:0px;
+    cursor:pointer;
+    display:block;
+    float:left;
+    padding:10px 15px;
+    background:#d7d7d7;
+    color:#4A4A4A;
+}
+.tabs ul li.active, .tabs ul li.active:hover {
+    background:#454444;
+    color:#fff;
+}
+.tabs ul li:hover {
+    background:#e4e4e7;
+}
+
+img.perk {
+    width: 36px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.ui-state-default {
+    background-color: #454444;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 5px 18px;
+    border: 1px solid #666;
+    border-bottom: 1px solid #111;
+}
+table.dataTable tbody td {
+    white-space: nowrap;
+}
+table.dataTable tbody tr.odd {
+    background-color: #d7d7d7;
+}
+table.dataTable tbody tr.even {
+    background-color: #ededed;
+}
+table.dataTable tbody tr {
+    color: #4A4A4A;
+}
+table.dataTable.no-footer {
+    border: 1px solid #111;
+}
+
+.chart {
+    width: 100%;
+    margin: 40px 0 0;
+}
