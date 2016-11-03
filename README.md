@@ -53,6 +53,8 @@ bUploadAllStats=True
 The following components and classes were used in the development of applications:
 
 * [Highcharts] [2] - Highsoft AS, Sentrumsgata, 6893 VIK I SOGN, Norway.
+* [DataTables] [3] - SpryMedia Ltd is registered in Scotland, company no. SC456502.
 
    [1]: <http://forums.tripwireinteractive.com/forum/killing-floor/killing-floor-modifications/coding-aa/36898-mut-per-server-stats>
    [2]: <http://www.highcharts.com/>
+   [3]: <https://datatables.net/>

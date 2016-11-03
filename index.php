@@ -121,7 +121,6 @@
                                         <td><?= $val['MeleeDamageStat'] ?></td>
                                         <td><?= $val['FlameThrowerDamageStat'] ?></td>
                                         <td><?= $val['ExplosivesDamageStat'] ?></td>
-                                        
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
