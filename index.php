@@ -82,8 +82,8 @@
                                         <td><img src="img/perks/<?= $perks[$val['SelectedVeterancy']] ?>" class="perk" alt="" /><?= $val['PlayerName'] ?></td>
                                         <td><?= $val['WinsCount'] ?></td>
                                         <td><?= $val['LostsCount'] ?></td>
-                                        <td><?= gmdate("Hч. iм. sсек.", $val['TotalPlayTime']) ?></td>
-                                        <td><?= gmdate("Hч. iм. sсек.", $val['TotalZedTimeStat']) ?></td>
+                                        <td><?= sprintf('%02dч. %02dм. %02d с.', $val['TotalPlayTime']/3600, ($val['TotalPlayTime'] % 3600)/60, ($val['TotalPlayTime'] % 3600) % 60); ?></td>
+                                        <td><?= sprintf('%02dч. %02dм. %02d с.', $val['TotalZedTimeStat']/3600, ($val['TotalZedTimeStat'] % 3600)/60, ($val['TotalZedTimeStat'] % 3600) % 60); ?></td>
                                         <td><?= $val['SelfHealsStat'] ?> HP</td>
                                         <td><?= $val['WeldingPointsStat'] ?></td>
                                         <td>$<?= $val['CashDonatedStat'] ?></td>
