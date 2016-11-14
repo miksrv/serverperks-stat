@@ -29,11 +29,11 @@
             'SelfHealsStat'          => 'Лечение себя',
             'SoleSurvivorWavesStat'  => 'Единственный выживший',
             'CashDonatedStat'        => 'Передано денег',
-            'FeedingKillsStat'       => '??',
-            'BurningCrossbowKillsStat' => 'Снайпер (стрелковое)',
-            'GibbedFleshpoundsStat'    => 'Отбивальщик (Fleshpound)',
+            'FeedingKillsStat'       => 'Съеден зомби',
+            'BurningCrossbowKillsStat' => 'Убито арбалетом',
+            'GibbedFleshpoundsStat'    => 'Казнено отбивальщиков (Fleshpound)',
             'StalkersKilledWithExplosivesStat' => 'Убито сталкеров взрывчаткой',
-            'GibbedEnemiesStat' => '??',
+            'GibbedEnemiesStat' => 'Казнено мутантов',
             'BloatKillsStat'    => 'Толстяк (Bloat)',
             'SirenKillsStat'    => 'Сирена (Siren)',
             'KillsStat'         => 'Убито врагов',
@@ -58,6 +58,7 @@
                         <li>Общая статистика</li>
                         <li>Специальности</li>
                         <li>Убито врагов</li>
+                        <li>Прочее</li>
                     </ul>
                     <div>
                         <div>
@@ -70,9 +71,6 @@
                                         <th><?= $lang['LostsCount'] ?></th>
                                         <th><?= $lang['TotalPlayTime'] ?></th>
                                         <th><?= $lang['TotalZedTimeStat'] ?></th>
-                                        <th><?= $lang['SelfHealsStat'] ?></th>
-                                        <th><?= $lang['WeldingPointsStat'] ?></th>
-                                        <th><?= $lang['CashDonatedStat'] ?></th>
                                         <th><?= $lang['KillsStat'] ?></th>
                                     </tr>
                                 </thead>
@@ -84,9 +82,6 @@
                                         <td><?= $val['LostsCount'] ?></td>
                                         <td><?= sprintf('%02dч. %02dм. %02d с.', $val['TotalPlayTime']/3600, ($val['TotalPlayTime'] % 3600)/60, ($val['TotalPlayTime'] % 3600) % 60); ?></td>
                                         <td><?= sprintf('%02dч. %02dм. %02d с.', $val['TotalZedTimeStat']/3600, ($val['TotalZedTimeStat'] % 3600)/60, ($val['TotalZedTimeStat'] % 3600) % 60); ?></td>
-                                        <td><?= $val['SelfHealsStat'] ?> HP</td>
-                                        <td><?= $val['WeldingPointsStat'] ?></td>
-                                        <td>$<?= $val['CashDonatedStat'] ?></td>
                                         <td><?= $val['KillsStat'] ?></td>
                                     </tr>
                                     <?php endforeach; ?>
@@ -121,6 +116,7 @@
                                         <td><?= $val['MeleeDamageStat'] ?></td>
                                         <td><?= $val['FlameThrowerDamageStat'] ?></td>
                                         <td><?= $val['ExplosivesDamageStat'] ?></td>
+                                        
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -137,6 +133,8 @@
                                         <th><?= $lang['SirenKillsStat'] ?></th>
                                         <th><?= $lang['StalkerKillsStat'] ?></th>
                                         <th><?= $lang['GibbedFleshpoundsStat'] ?></th>
+                                        <th><?= $lang['GibbedEnemiesStat'] ?></th>
+                                        <th><?= $lang['StalkersKilledWithExplosivesStat'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -147,20 +145,47 @@
                                         <td><?= $val['SirenKillsStat'] ?></td>
                                         <td><?= $val['StalkerKillsStat'] ?></td>
                                         <td><?= $val['GibbedFleshpoundsStat'] ?></td>
+                                        <td><?= $val['GibbedEnemiesStat'] ?></td>
+                                        <td><?= $val['StalkersKilledWithExplosivesStat'] ?></td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
                             <div class="chart" id="container4"></div>
                         </div>
+                        <div>
+                            <br>
+                            <table id="table4" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Игрок</th>
+                                        <th><?= $lang['SelfHealsStat'] ?></th>
+                                        <th><?= $lang['WeldingPointsStat'] ?></th>
+                                        <th><?= $lang['CashDonatedStat'] ?></th>
+                                        <th><?= $lang['SoleSurvivorWavesStat'] ?></th>
+                                        <th><?= $lang['FeedingKillsStat'] ?></th>
+                                        <th><?= $lang['BurningCrossbowKillsStat'] ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($ini_array as $key => $val): ?>
+                                    <tr>
+                                        <td><img src="img/perks/<?= $perks[$val['SelectedVeterancy']] ?>" class="perk" alt="" /><?= $val['PlayerName'] ?></td>
+                                        <td><?= $val['SelfHealsStat'] ?> HP</td>
+                                        <td><?= $val['WeldingPointsStat'] ?></td>
+                                        <td>$<?= $val['CashDonatedStat'] ?></td>
+                                        <td><?= $val['SoleSurvivorWavesStat'] ?> (волн)</td>
+                                        <td><?= $val['FeedingKillsStat'] ?> (раз)</td>
+                                        <td><?= $val['BurningCrossbowKillsStat'] ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>            
                 </div>
             </div>
         </div>
-        <footer>
-            <div>Powered by PHP\HTML - See on <a href="https://github.com/miksrv/serverperks-stat" title="" target="_blank">Github</a></div>
-            <div>Copyright &copy; <a href="http://miksrv.ru" title="" target="_blank">Mishka</a> 2016</div>
-        </footer>
     </body>
     <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>

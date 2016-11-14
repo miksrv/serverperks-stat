@@ -224,7 +224,7 @@ Highcharts.setOptions(Highcharts.theme);
 $(document).ready(function(){
     $(".tabs").lightTabs();
 
-    $('#table1,#table2,#table3').DataTable({
+    $('#table1,#table2,#table3,#table4').DataTable({
         bJQueryUI: true,
         paging: false,
         info: false,
